@@ -45,5 +45,5 @@ steps:
     azureSubscription: 'COVID-REPORT - Azure'
     appType: 'webAppLinux'
     WebAppName: 'COVID-REPORT'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     RuntimeStack: 'DOTNETCORE|Latest'
