@@ -11,16 +11,23 @@
 </head>
 <body ng-controller="ChartCtrl">
     <h1>{{message}}</h1>
-    <canvas id="line" class="chart chart-line" chart-data="data"
-            chart-labels="labels" chart-series="series" chart-options="options"
-            chart-dataset-override="datasetOverride" chart-click="onClick">
-    </canvas>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Regione</span>
+    <div class="container">
+        <div class="row">
+            <canvas id="line" class="chart chart-line" chart-data="data"
+                    chart-labels="labels" chart-series="series" chart-options="options"
+                    chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
         </div>
-        <input type="text" class="form-control" placeholder="Emilia" aria-label="Emilia" aria-describedby="basic-addon1" ng-model="regione" ng-keypress="myFunct($event)">
-    </div>  
+        <div class="row" style="margin:10px"></div>
+        <div class="row">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Regione</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Emilia" aria-label="Emilia" aria-describedby="basic-addon1" ng-model="regione" ng-keypress="myFunct($event)">
+            </div>
+        </div>
+    </div>
     <script src="controller.js"></script>
     <script src="dataRepo.js"></script>
 </body>
