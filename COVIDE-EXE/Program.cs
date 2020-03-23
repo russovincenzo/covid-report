@@ -20,7 +20,7 @@ namespace COVID_19
 
                     }
                 }else
-                foreach (var row in new LoadJson().GetDataFromWeb().Where(x => x.Regione.Contains(inputkey)))
+                foreach (var row in new LoadJson().GetDataFromWebRegione().Where(x => x.Regione.Contains(inputkey)))
                 {
                     Console.WriteLine(row.ToString());
 
