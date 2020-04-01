@@ -17,9 +17,11 @@ namespace COVID_19
         public int Ospedalizzazione { get; set; }
         [JsonProperty("isolamento_domiciliare")]
         public int IsolamentoDomiciliare { get; set; }
-        [JsonProperty("totale_attualmente_positivi")]
+        [JsonProperty("totale_positivi")]
         public int Positivi { get; set; }
-        [JsonProperty("nuovi_attualmente_positivi")]
+        [JsonProperty("variazione_totale_positivi")]
+        public int VariazioneTotalePositivi { get; set; }
+        [JsonProperty("nuovi_positivi")]
         public int NuoviPositivi { get; set; }
         [JsonProperty("dimessi_guariti")]
         public int Guariti { get; set; }

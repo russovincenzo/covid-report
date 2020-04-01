@@ -21,6 +21,11 @@ namespace covid_report
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseKestrel();
+                    webBuilder.UseIIS();
+                    //webBuilder.UseUrls("http://0.0.0.0:5000", "https://0.0.0.0:5001");
+                    webBuilder.UseIISIntegration();
+                    webBuilder.ConfigureLogging((ct) => { ct.AddDebug(); ct.AddConsole(); });
                 });
     }
 }

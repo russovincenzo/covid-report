@@ -19,26 +19,12 @@ namespace covid_report.Controllers
             //var entryOptions = new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.Low);
         }
 
-        //[HttpGet("positivi")]
-        //public IEnumerable<int> GetPositivi(string regione)
-        //{
-        //    int prec = 0;
-        //    var resulSet = new List<int>();
-        //    var res = loadJson.GetDataFromWebRegione().Where(x => x.Regione.ToUpperInvariant().Contains(regione.ToUpperInvariant())).OrderBy(x=>x.Data).Select(x=>x.Positivi).ToArray();
-        //    foreach (var item in res)
-        //    {
-        //        resulSet.Add(item - prec);
-        //        prec = item;
-        //    }
-        //    return resulSet.ToArray();
-        //}
-
         [HttpGet("positivi")]
         public IEnumerable<int> GetPositivi(string regione)
         {
             if (regione.ToUpper().Contains("ITA"))
-                return loadJson.GetDataFromWebNaz().OrderBy(x => x.Data).Select(x => x.Positivi).ToArray();
-            return loadJson.GetDataFromWebRegione().Where(x => x.Regione.ToUpperInvariant().Contains(regione.ToUpperInvariant())).OrderBy(x => x.Data).Select(x => x.Positivi).ToArray();
+                return loadJson.GetDataFromWebNaz().OrderBy(x => x.Data).Select(x => x.VariazioneTotalePositivi).ToArray();
+            return loadJson.GetDataFromWebRegione().Where(x => x.Regione.ToUpperInvariant().Contains(regione.ToUpperInvariant())).OrderBy(x => x.Data).Select(x => x.VariazioneTotalePositivi).ToArray();
         }
 
         [HttpGet("deceduti")]

@@ -37,9 +37,9 @@ namespace covid_report
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
@@ -54,7 +54,6 @@ namespace covid_report
                     List<string> { "index.html" }
             });
             app.UseStaticFiles();
-
         }
     }
 }
