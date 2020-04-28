@@ -23,8 +23,8 @@ namespace covid_report.Controllers
         public IEnumerable<int> GetPositivi(string regione)
         {
             if (regione.ToUpper().Contains("ITA"))
-                return loadJson.GetDataFromWebNaz().OrderBy(x => x.Data).Select(x => x.VariazioneTotalePositivi).ToArray();
-            return loadJson.GetDataFromWebRegione().Where(x => x.Regione.ToUpperInvariant().Contains(regione.ToUpperInvariant())).OrderBy(x => x.Data).Select(x => x.VariazioneTotalePositivi).ToArray();
+                return loadJson.GetDataFromWebNaz().OrderBy(x => x.Data).Select(x => x.Positivi).ToArray();
+            return loadJson.GetDataFromWebRegione().Where(x => x.Regione.ToUpperInvariant().Contains(regione.ToUpperInvariant())).OrderBy(x => x.Data).Select(x => x.Positivi).ToArray();
         }
 
         [HttpGet("deceduti")]
